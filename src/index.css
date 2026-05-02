@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Login palette — dark */
+  --bg:        #02010a;
+  --bg2:       #06021a;
+  --bg3:       #0a0424;
+  --accent:    #cc99ff;
+  --accent2:   #9966ff;
+  --accent3:   #6633ff;
+  --accent-dim:#1a0a3d;
+  --pink:      #ffccf2;
+  --blue:      #0033ff;
+  --blue-dim:  #000a33;
+  --red:       #ff4466;
+  --yellow:    #ffcc44;
+  --green:     #44ffaa;
+  --text:      #f0eaff;
+  --text-mid:  #b39ddb;
+  --text-dim:  #5a4a7a;
+  --border:    #1a0a3d;
+  --border2:   #2d1060;
+  --glow:      0 0 20px rgba(153,102,255,0.2);
+  --glow-lg:   0 0 40px rgba(153,102,255,0.25);
+
+  /* Dashboard palette — lighter, comfortable */
+  --dash-bg:      #f2e6ee;
+  --dash-bg2:     #ede0f0;
+  --dash-bg3:     #e8d8ec;
+  --dash-card:    #ffffff;
+  --dash-border:  #d4b8e0;
+  --dash-border2: #c4a0d8;
+  --dash-text:    #1a0a2e;
+  --dash-text2:   #4a2870;
+  --dash-text3:   #7a5a9a;
+  --dash-accent:  #977dff;
+  --dash-accent2: #7b5ea7;
+  --dash-green:   #1a9a5a;
+  --dash-red:     #cc2244;
+  --dash-yellow:  #aa7700;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(153,102,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(153,102,255,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--dash-bg); }
+::-webkit-scrollbar-thumb { background: var(--dash-border2); border-radius: 3px; }
+
+@keyframes blink {
+  0%,100% { opacity:1; } 50% { opacity:0.3; }
+}
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes pulseGlow {
+  0%,100% { box-shadow: 0 0 6px rgba(151,125,255,0.5); }
+  50%      { box-shadow: 0 0 18px rgba(151,125,255,0.9); }
+}
+@keyframes marquee {
+  from { transform: translateX(100vw); }
+  to   { transform: translateX(-100%); }
+}
+@keyframes gradShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
